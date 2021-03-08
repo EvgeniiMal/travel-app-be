@@ -27,9 +27,6 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 const countryRouter = require('./modules/countries/country.router');
 
 app.use('/countries', countryRouter);
-app.use('/info', (req, res) => {
-  res.send(process.env.MONGO_CONNECTION_STRING)
-})
 
 app.use((req, res) => {
   res.status(StatusCodes.NOT_IMPLEMENTED).send(ReasonPhrases.NOT_IMPLEMENTED);
